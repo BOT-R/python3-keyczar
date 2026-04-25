@@ -34,22 +34,16 @@ extra = {}
 # if sys.version_info >= (3,):
 #     extra['use_2to3'] = True
 
-setup(name='python3-keyczar',
-      description='Toolkit for safe and simple cryptography',
-      author='Arkajit Dey',
-      author_email='arkajit.dey@gmail.com',
-      url='http://www.keyczar.org/',
-      version='0.71rc0',
-      packages=['keyczar','keyczar.tool','keyczar.test'],
-      test_suite="keyczar.test.allsuite",
-      install_requires= ['pycrypto>2.0', 'pyasn1'],
-      maintainer='Google, Inc.',
-      maintainer_email='keyczar-discuss@googlegroups.com',
+setup(name='dmr-crypto',
+      description='DentalEMR AES encryption (keyczar-compatible wire format)',
+      author='DentalEMR',
+      author_email='admin@dentalemr.com',
+      version='1.0.0',
+      packages=['keyczar'],
+      install_requires=['cryptography>=3.1,<=41.0.7'],
       license='http://www.apache.org/licenses/LICENSE-2.0',
       platforms=['any'],
       classifiers=filter(None, classifiers.split("\n")),
       long_description=doclines[0],
-      # create an executable for the KeyCzar tool
-      entry_points={'console_scripts': ['keyczart = keyczar.tool.keyczart:_main_setuptools']},
       **extra
 )
